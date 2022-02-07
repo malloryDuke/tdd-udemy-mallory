@@ -14,4 +14,10 @@ public class Dollar {
     Dollar times( int multiplier) {
         return new Dollar(amount * multiplier);
     }
+
+    // Override method for equality test - determine if Dollar amounts are equal
+    public boolean equals(Object object){
+        Dollar dollar = (Dollar) object;
+        return amount == dollar.amount;
+    }
 }
