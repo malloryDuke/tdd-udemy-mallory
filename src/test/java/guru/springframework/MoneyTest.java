@@ -9,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  * Created by jt on 2018-10-04.
  */
 public class MoneyTest {
-    // To-Do List for this branch (3.25 video):
-        // Add currency to Money, dollar and franc
+    // To-Do List for this branch (3.26 video):
+        // Get rid of duplicate times method in dollar and franc
 
     @Test
     void testMultiplicationDollar() {
