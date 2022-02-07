@@ -1,7 +1,6 @@
 package guru.springframework;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
@@ -9,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  * Created by jt on 2018-10-04.
  */
 public class MoneyTest {
-    // To-Do List for this branch (3.27 video):
-        // Revisit Dollar and Franc duplication - constructors. Basically get rid of Dollar and Franc and refactor tests
+    // To-Do List for this branch (3.28 video):
+        // Add addition method for money and introduce concept of bank
 
     @Test
     void testMultiplication() {
@@ -35,5 +34,14 @@ public class MoneyTest {
     void testCurrency() {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
+    }
+
+    @Test
+    void testSimpleAddition() {
+        Money five = Money.dollar(5);
+        Expression sum = five.plus(five);
+        Bank bank = new Bank();
+        Money reduced = bank.reduce(sum, "USD");
+        assertEquals(Money.dollar(10), reduced);
     }
 }
