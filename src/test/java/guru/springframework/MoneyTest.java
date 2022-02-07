@@ -9,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  * Created by jt on 2018-10-04.
  */
 public class MoneyTest {
-    // To-Do List for this branch (3.10 video):
-        // Make Dollar amount private
+    // To-Do List for this branch (3.21 video):
+        // Implement Franc currency and test multiplication and equality between two francs
 
     @Test
-    void testMultiplication() {
+    void testMultiplicationDollar() {
         Dollar five = new Dollar(5);
         Dollar product = five.times(2);
         assertEquals(new Dollar(10), product);
@@ -22,8 +22,23 @@ public class MoneyTest {
     }
 
     @Test
-    void testEquality() {
+    void testEqualityDollar() {
         assertEquals(new Dollar(5), new Dollar(5));
         assertNotEquals(new Dollar(5), new Dollar(8));
+    }
+
+    @Test
+    void testMultiplicationFranc() {
+        Franc five = new Franc(5);
+        Franc product = five.times(2);
+        assertEquals(new Franc(10), product);
+        product = five.times(3);
+        assertEquals(new Franc(15), product);
+    }
+
+    @Test
+    void testEqualityFranc() {
+        assertEquals(new Franc(5), new Franc(5));
+        assertNotEquals(new Franc(5), new Franc(8));
     }
 }
