@@ -9,8 +9,8 @@ import static org.junit.jupiter.api.Assertions.assertNotEquals;
  * Created by jt on 2018-10-04.
  */
 public class MoneyTest {
-    // To-Do List for this branch (3.21 video):
-        // Add Money class to decrease duplicate code between Franc and Dollar
+    // To-Do List for this branch (3.23 video):
+        // Compare Franc and Dollars
 
     @Test
     void testMultiplicationDollar() {
@@ -25,6 +25,9 @@ public class MoneyTest {
     void testEqualityDollar() {
         assertEquals(new Dollar(5), new Dollar(5));
         assertNotEquals(new Dollar(5), new Dollar(8));
+        // Considered equal because both extend Money class
+        // So change Money equals method so that the specific classes are compared
+        assertNotEquals(new Dollar(5), new Franc(5));
     }
 
     @Test
